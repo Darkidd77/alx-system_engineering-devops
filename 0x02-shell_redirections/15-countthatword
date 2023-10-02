@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -i -c "bin" 
+grep -c -i "bin" 
