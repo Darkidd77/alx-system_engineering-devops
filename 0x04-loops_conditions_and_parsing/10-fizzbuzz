@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# numbers 1 - 100
+for x in {1..100}
+do
+	if [ $((x % 5)) -eq 0 ] && [ $((x % 3)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((x % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	elif [ $((x % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	else
+		echo "$x"
+	fi
+done
