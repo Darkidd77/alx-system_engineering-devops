@@ -19,7 +19,8 @@ if __name__ == '__main__':
 
     user_name = res.json().get('username')
     "EVERYTHING"
-    url_tasks = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(user_id)
+    url_base = 'https://jsonplaceholder.typicode.com/users/'
+    url_tasks = '{}{}/todos'.format(url_base, user_id)
     res = requests.get(url_tasks)
     tasks = res.json()
 
