@@ -1,4 +1,7 @@
-file { '/tmp/school':
+#create file in /tmp with puppet
+
+file {'file':
+  path   => '/tmp/school',
   ensure => present,
   owner  => 'www-data',
   group  => 'www-data',
