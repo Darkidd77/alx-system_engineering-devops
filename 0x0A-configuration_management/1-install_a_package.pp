@@ -1,8 +1,7 @@
 # flask and pip with puppet
 
 package { 'python3-pip':
-  ensure   => '3.8.10',
-  provider => 'pip3',
+  ensure   => installed,
 }
 
 package { 'Flask':
