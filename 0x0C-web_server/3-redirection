@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a new ubuntu machine by installing
+# Nginx be listening on port 80
+# Serve a page that return a Hello World string
+
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+sh -c 'echo "Hello World!" > /var/www/html/index.html'
+sed -i 'listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/@BLACKPINK permanent;' /etc/nginx/sites/sites-available/default
+sudo service nginx restart
