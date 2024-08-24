@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# a new ubuntu machine by installing
-# Nginx be listening on port 80
-# Serve a page that return a Hello World string
+# Bash script configures a Ubuntu machine
+# so that /redirect_me is redirecting to another page
 
-sudo apt-get update -y
-sudo apt-get install nginx -y
-sudo ufw allow 'Nginx HTTP'
+apt-get update -y
+apt-get install nginx -y
+ufw allow 80
 sh -c 'echo "Hello World!" > /var/www/html/index.html'
-sudo sed -i '/server_name _;/a \\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}' /etc/nginx/sites-available/default
-sudo service nginx restart
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+service nginx restart
