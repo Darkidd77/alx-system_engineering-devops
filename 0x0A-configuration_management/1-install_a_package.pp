@@ -1,4 +1,4 @@
-#install flask and pip with puppet
+# flask and pip with puppet
 
 package { 'python3-pip':
   ensure   => '3.8.10',
