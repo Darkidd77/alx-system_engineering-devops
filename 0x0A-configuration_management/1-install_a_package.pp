@@ -1,6 +1,6 @@
 #install flask and pip with puppet
 
-package { 'Python3.8':
+package { 'Python':
   ensure   => '3.8.10',
   provider => 'pip3',
 }
